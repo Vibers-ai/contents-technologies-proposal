@@ -1,0 +1,682 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>제안 및 가견적서-Contents Technologies</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="231bd835-2e5b-80d1-ae27-ff36a61b8ae6" class="page sans"><header><h1 class="page-title">제안 및 가견적서-Contents Technologies</h1><p class="page-description"></p></header><div class="page-body"><h1 id="231bd835-2e5b-80c3-a9f5-d79e61d88993" class="">인플루언서 마케팅 플랫폼 구축 전략 제안 및 가견적서</h1><h3 id="231bd835-2e5b-808b-96e0-d77679d701f1" class="">1. 프로젝트 개요 및 목표</h3><p id="231bd835-2e5b-8028-b9fc-d3bea49d06e7" class="">Contents Technologies는 인플루언서 시딩 마케팅의 폭발적인 성장 잠재력에도 불구하고, <strong>핵심 프로세스의 수동 운영</strong>으로 인해 확장성에 한계를 겪고 있습니다. 분산된 데이터, 주관적인 단가 측정, 반복적인 커뮤니케이션은 팀의 귀중한 리소스를 소모시키고 더 많은 캠페인을 수행할 기회를 제약하는 핵심적인 비즈니스 문제입니다.</p><p id="231bd835-2e5b-80f1-9d1f-eab8f6531f4f" class="">본 프로젝트의 최종 목표는 단순한 자동화 툴을 넘어, <strong>인플루언서 마케팅의 전 과정을 통합 관리하고 데이터 기반의 전략적 의사결정을 지원하는 &#x27;자체 플랫폼&#x27;을 구축</strong>하는 것입니다. 이를 통해 운영 효율성을 극대화하고, 비즈니스의 핵심 경쟁력을 강화하여 향후 팀의 성장과 분사(Spin-off)까지 가능한 단단한 기반을 마련하고자 합니다.</p><p id="233bd835-2e5b-802e-93ae-d0fa171fdadc" class="">Contents Technologies의 성공적인 AI 전환을 위해, 저희 VibersAI는 귀사의 현재 상황과 미래 성장 가능성을 모두 고려하여 세 가지 전략적 옵션을 제안합니다. </p><h3 id="231bd835-2e5b-8041-8236-c8a463118694" class=""><strong>2. </strong><strong>팀 구성</strong></h3><ul id="231bd835-2e5b-80e4-9b22-e63c5db721dc" class="bulleted-list"><li style="list-style-type:disc"><strong>CSSO (Customer Success Owner):</strong> 1명 (프로젝트 총괄 및 비즈니스 요구사항 정의)</li></ul><ul id="231bd835-2e5b-805c-a868-f4b3a0311f0f" class="bulleted-list"><li style="list-style-type:disc"><strong>T-Lead (Technical Lead):</strong> 1명 (기술 아키텍처 설계 및 핵심 로직 개발)</li></ul><ul id="232bd835-2e5b-802e-ab0f-cc575682dfcb" class="bulleted-list"><li style="list-style-type:disc"><strong>AM (Account Manager)</strong>: 1명 (캠페인 기획 및 실행의 주체로서, 실제 운영 관점에서 플랫폼에 필요한 기능(인플루언서 소통, 캠페인 관리 등)을 정의하고 테스트하는 역할을 수행합니다. 개발된 플랫폼을 가장 먼저, 그리고 가장 활발하게 사용할 핵심 사용자(Key User) 그룹을 대표합니다.)</li></ul><ul id="232bd835-2e5b-80cb-9e55-c24ce38adccd" class="bulleted-list"><li style="list-style-type:disc"><strong>Designer (UI/UX)</strong>: 1명 (플랫폼의 전체 사용자 경험(UX)과 인터페이스(UI)를 설계)</li></ul><ul id="231bd835-2e5b-8013-8efe-c57796904f12" class="bulleted-list"><li style="list-style-type:disc"><strong>Developer (Full Stack):</strong> 1~2명 (전체 시스템 프론트엔드 및 백엔드 개발)</li></ul><p id="231bd835-2e5b-809c-8b8c-ec457d0b93a8" class=""><em>가견적은 위 팀 구성을 기준으로 산정되었으며, 상세 기능 정의 및 협의 후 확정됩니다.</em></p><hr id="233bd835-2e5b-80a2-9539-d0f315463e03"/><h3 id="231bd835-2e5b-8095-ae3e-c6bf52801738" class="">3. Option 1: 구축형 - 단계별 제안 및 가견적</h3><p id="233bd835-2e5b-80a6-8fc8-d7abe8fbd27e" class="">본 제안은 Contents Technologies의 문제를 해결할 수 있는 인플루언서 마케팅 자동화 플랫폼을 구축하고, 직접 운영하실 수 있도록 전달하는 것을 목표로 하는 기존의 SI 형태의 솔루션을 목표로 하며, 4단계 로드맵에 따른 구체적인 시스템 구축 내용과 단계별 예상 투입 공수(Man/Month)를 기술합니다.</p><h3 id="231bd835-2e5b-80c3-aebe-d345bc4e1d91" class=""><strong>Phase 1: 기반 구축 - 객관적인 인플루언서 가치 평가 및 데이터 중앙화</strong></h3><ul id="231bd835-2e5b-801c-b2b8-e9536c5a752c" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> &quot;이 인플루언서에게 얼마를 제안해야 할까?&quot;라는 주관적 판단의 어려움. 수백 개 채널을 수동으로 확인하고 에어테이블에 입력하는 반복적이고 비효율적인 작업.</li></ul><ul id="231bd835-2e5b-80c0-99e4-ce6437c2a562" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> 인플루언서의 가치를 객관적인 데이터로 평가하는 자동화 모델을 만들고, 모든 관련 정보를 한곳에서 관리하는 데이터 기반을 마련합니다.</li></ul><ul id="231bd835-2e5b-80ef-80ba-f01835f85d76" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="232bd835-2e5b-8055-849b-cb2505a7faba" class="bulleted-list"><li style="list-style-type:circle"><strong>업무 효율성 극대화:</strong> 인플루언서 발굴 및 단가 측정에 소요되는 <strong>수작업 시간을 최대 85%까지 절감</strong>하고, 확보된 리소스를 관계 형성, 콘텐츠 기획 등 고부가가치 업무에 집중시킬 수 있습니다. (Mediakix 등 다수 글로벌 마케팅 에이전시)</li></ul><ul id="232bd835-2e5b-8084-b4b1-ef8e5c240228" class="bulleted-list"><li style="list-style-type:circle"><strong>예산 효율화 및 협상력 증대:</strong> &#x27;평균의 함정&#x27;을 회피하는 데이터 기반 가격 모델을 통해 <strong>캠페인 예산을 15~20% 더 효율적으로 집행</strong>하고, 객관적 근거를 바탕으로 협상력을 높일 수 있습니다.</li></ul><ul id="232bd835-2e5b-80a1-9157-c537646d4296" class="bulleted-list"><li style="list-style-type:circle"><strong>핵심 데이터 자산화:</strong> 모든 인플루언서 정보와 가치 평가 데이터를 중앙 DB에 자동으로 축적하여, 향후 <strong>경쟁사 대비 독보적인 데이터 자산을 구축</strong>하고 비즈니스의 장기적인 기반을 마련합니다.</li></ul></li></ul><ul id="231bd835-2e5b-80f3-a0e5-fb70948a8cd8" class="bulleted-list"><li style="list-style-type:disc"><strong>기간:</strong> 약 2개월</li></ul><ul id="231bd835-2e5b-8030-af09-c1800b042dbc" class="bulleted-list"><li style="list-style-type:disc"><strong>가견적:</strong> <strong>총 6.5 M/M</strong> (CSSO 1, Designer 1.5, T-Lead 2, Developer 2)</li></ul><ul id="231bd835-2e5b-8010-9382-d7b97d473033" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 구축 내용 (Business-driven IA):</strong><ul id="231bd835-2e5b-80fd-a2f0-db470c49ecd6" class="bulleted-list"><li style="list-style-type:circle"><strong>인플루언서 데이터 허브:</strong> 인플루언서의 프로필, 채널별 지표(조회수, 팔로워 등)를 통합 관리하는 중앙 데이터베이스.<ul id="231bd835-2e5b-800a-9600-c25affc9236d" class="bulleted-list"><li style="list-style-type:square">기존의 크롤링 DB를 통한 인플루언서 프로필, 평균 (혹은 다른 통계) 조회수, 팔로워, 카테고리 및 각종 스코어를 저장하는 DB</li></ul></li></ul><ul id="231bd835-2e5b-80a8-9c4b-f3ae4c1b060c" class="bulleted-list"><li style="list-style-type:circle"><strong>자동 가치 평가 솔루션:</strong> &#x27;평균의 함정&#x27;을 회피하는 통계적 로직을 적용하여, 다각적인 지표를 기반으로 객관적인 제안 단가를 자동 산출하는 시스템. 인플루언서 데이터 허브에 결과 저장.<ul id="231bd835-2e5b-808e-8f26-ed34d788f2a4" class="bulleted-list"><li style="list-style-type:square">데이터 수집기 (현존 크롤러 연동)</li></ul><ul id="231bd835-2e5b-805d-87c8-ccd3ff9cb821" class="bulleted-list"><li style="list-style-type:square">가치 평가 애플리케이션 (단순 평균이 아닌 다양한 통계 기반)</li></ul><ul id="231bd835-2e5b-808f-b631-d698f6f51dc5" class="bulleted-list"><li style="list-style-type:square"><strong>콘텐츠 특성 분석:</strong> 댓글 등 텍스트 데이터를 분석하여 콘텐츠의 주요 키워드나 반응을 파악하고 정성적 판단을 지원.<ul id="231bd835-2e5b-80d4-8cfa-dd71be2606c1" class="bulleted-list"><li style="list-style-type:disc">댓글 분석</li></ul><ul id="231bd835-2e5b-8064-947d-d57b287bb5be" class="bulleted-list"><li style="list-style-type:disc">콘텐츠 카테고리 및 핵심 데이터 분석<ul id="232bd835-2e5b-8011-a82e-f91bcc1e33c9" class="bulleted-list"><li style="list-style-type:circle">팔로워/구독자 수 및 증가율</li></ul><ul id="232bd835-2e5b-80da-8a58-da25528e95c3" class="bulleted-list"><li style="list-style-type:circle">좋아요, 공유, 저장 등 인게이지먼트 지표</li></ul><ul id="232bd835-2e5b-8067-8662-dfb88fd6b666" class="bulleted-list"><li style="list-style-type:circle">댓글 수 및 댓글 내용의 감성 분석⁠⁠</li></ul><ul id="232bd835-2e5b-8097-be22-ddc685c6363b" class="bulleted-list"><li style="list-style-type:circle">콘텐츠 게시 빈도 및 패턴</li></ul><ul id="232bd835-2e5b-8085-95b2-e0d8f214d451" class="bulleted-list"><li style="list-style-type:circle">콘텐츠 카테고리 및 주요 키워드⁠⁠</li></ul><ul id="232bd835-2e5b-803f-93be-d649e4e21bb6" class="bulleted-list"><li style="list-style-type:circle">국가 및 인종</li></ul></li></ul></li></ul></li></ul><ul id="231bd835-2e5b-8028-b943-fd4f3768804c" class="bulleted-list"><li style="list-style-type:circle"><strong>운영 관리자 포털:</strong> 평가된 인플루언서 목록과 추천 단가를 확인하고, 최종 단가를 확정/관리할 수 있는 초기 어드민 화면.<ul id="231bd835-2e5b-8014-8f2f-e6547a2d87d2" class="bulleted-list"><li style="list-style-type:square">인플루언서 대시보드</li></ul><ul id="231bd835-2e5b-8011-a30b-db15484a9a74" class="bulleted-list"><li style="list-style-type:square">단가 검토 및 확정 기능</li></ul></li></ul></li></ul><h3 id="231bd835-2e5b-802d-935c-e3a3093bd50a" class=""><strong>Phase 2: 고도화 - 커뮤니케이션 내재화 및 성과 기반 스코어링</strong></h3><ul id="231bd835-2e5b-80f7-a325-fd5e1e94773b" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 외부 이메일 툴(Instantly)에 대한 의존성 및 컨트롤의 한계. 캠페인 성공 여부와 무관하게 고정된, 학습되지 않는 단가 측정 방식.</li></ul><ul id="231bd835-2e5b-8040-9a5d-fa9e3318c126" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> 외부 툴을 대체하는 자체 이메일 발송 기능을 확보하고, 실제 캠페인 성과와 사람의 피드백이 다시 인플루언서 평가에 반영되는 &#x27;선순환 학습 루프&#x27;를 구축합니다.</li></ul><ul id="231bd835-2e5b-8036-8e87-c28bfeaa4741" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="231bd835-2e5b-809d-b7a2-eefa8a97d0eb" class="bulleted-list"><li style="list-style-type:circle">섭외 커뮤니케이션 전 과정에 대한 완전한 통제권 확보 및 유연한 자동화 전략 실행.</li></ul><ul id="231bd835-2e5b-80d6-b7d3-d95cb3b1e72d" class="bulleted-list"><li style="list-style-type:circle">캠페인을 진행할수록 시스템이 스스로 똑똑해져, 더 정확한 인플루언서를 더 합리적인 가격에 섭외 가능.</li></ul><ul id="231bd835-2e5b-8084-a38b-d44ab425ea35" class="bulleted-list"><li style="list-style-type:circle">실제 성과가 좋은 &#x27;진짜&#x27; 인플루언서를 발굴하고 지속적인 관계를 맺는 기반 마련.</li></ul></li></ul><ul id="231bd835-2e5b-8046-8da3-f272c8ec0bb3" class="bulleted-list"><li style="list-style-type:disc"><strong>기간:</strong> 약 3개월</li></ul><ul id="231bd835-2e5b-80d8-8c5e-cb761601a8ed" class="bulleted-list"><li style="list-style-type:disc"><strong>가견적:</strong> <strong>총 10.0 M/M</strong> (CSSO 2, Designer 2, T-Lead 3, Developer 3)</li></ul><ul id="231bd835-2e5b-809f-a62f-f688460865b5" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 구축 내용 (Business-driven IA):</strong><ul id="231bd835-2e5b-8079-b76e-e5f31844d881" class="bulleted-list"><li style="list-style-type:circle"><strong>자체 이메일 발송 기능:</strong> 외부 툴을 대체하여, 플랫폼 내에서 직접 섭외 이메일을 발송하고 관리하는 기능. (템플릿, 스케줄링 포함)<ul id="231bd835-2e5b-805b-b17f-c6c32b6365cf" class="bulleted-list"><li style="list-style-type:square">이메일 자동화 서비스</li></ul><ul id="231bd835-2e5b-80bd-b773-d73f0770c0d2" class="bulleted-list"><li style="list-style-type:square">템플릿 관리 시스템</li></ul><ul id="231bd835-2e5b-807d-b4d7-c1218dbe3e56" class="bulleted-list"><li style="list-style-type:square">스케줄링</li></ul></li></ul><ul id="231bd835-2e5b-802e-b100-d5884b3e82d7" class="bulleted-list"><li style="list-style-type:circle"><strong>캠페인 성과 기록:</strong> 과거 캠페인의 실제 성과(ROI, 최종 조회수 등)를 인플루언서별로 시스템에 축적.<ul id="231bd835-2e5b-8048-85bd-fb2693a88162" class="bulleted-list"><li style="list-style-type:square">캠페인별 성과 DB</li></ul></li></ul><ul id="231bd835-2e5b-80cf-9cc9-e084fd4b7a22" class="bulleted-list"><li style="list-style-type:circle"><strong>자기 학습 평가 모델:</strong> 축적된 성과 데이터를 분석하여, 인플루언서 가치 평가 모델을 자동으로 업데이트하고 정교화하는 로직.<ul id="231bd835-2e5b-8055-81a4-f3b6b217ec66" class="bulleted-list"><li style="list-style-type:square">성과 데이터 피드백 루프</li></ul><ul id="231bd835-2e5b-8059-9759-f5303c9c8f78" class="bulleted-list"><li style="list-style-type:square">LLM 기반의 평가 시스템 로직 및 프롬프트 강화</li></ul></li></ul></li></ul><h3 id="231bd835-2e5b-80a9-b3f9-c50f8b3695eb" class=""><strong>Phase 3: 플랫폼 통합 - 캠페인 전 과정의 체계적인 관리</strong></h3><ul id="231bd835-2e5b-80cf-8e3d-c8185c507e89" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 여러 채널(이메일, 엑셀, 메신저)에 흩어져 있는 캠페인 현황. 누가 누구와 어떤 단계까지 이야기했는지 파악하기 어려운 커뮤니케이션 파편화.</li></ul><ul id="231bd835-2e5b-807b-a295-c2fd5e6b34bf" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> 섭외, 계약, 콘텐츠 제작, 성과 확인 등 캠페인의 시작부터 끝까지 모든 과정을 플랫폼 내에서 추적하고 관리하는 통합 워크플로우를 구현합니다.</li></ul><ul id="231bd835-2e5b-8038-8b21-c52d3c9aec75" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="231bd835-2e5b-80ac-8ce2-f7dd76cffd29" class="bulleted-list"><li style="list-style-type:circle">모든 팀원이 캠페인 진행 상황을 한눈에 파악할 수 있는 &#x27;Single Source of Truth&#x27; 구축.</li></ul><ul id="231bd835-2e5b-8076-bb01-e36fcf25b050" class="bulleted-list"><li style="list-style-type:circle">수동 상태 변경(e.g., &#x27;interested&#x27;)과 같은 휴먼 에러를 방지하고, 프로세스 누락 없는 체계적인 캠페인 운영.</li></ul></li></ul><ul id="231bd835-2e5b-802f-ae9f-d6936b9a233d" class="bulleted-list"><li style="list-style-type:disc"><strong>기간:</strong> 약 4~5개월</li></ul><ul id="231bd835-2e5b-8080-a384-e0fa1dacfb30" class="bulleted-list"><li style="list-style-type:disc"><strong>가견적:</strong> <strong>총 14.0 M/M</strong> (CSSO 2.5, Designer 3, T-Lead 4, Developer 4.5)</li></ul><ul id="231bd835-2e5b-8017-93e7-d5e20f545158" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 구축 내용 (Business-driven IA):</strong><ul id="231bd835-2e5b-8086-bbd7-eb460bc7f13c" class="bulleted-list"><li style="list-style-type:circle"><strong>캠페인 관리 시스템:</strong> 신규 캠페인을 생성하고, 목표와 예산을 설정하며, 참여 인플루언서를 관리하는 기능.<ul id="231bd835-2e5b-80be-b27e-dedba5060968" class="bulleted-list"><li style="list-style-type:square">캠페인 생성/목표 설정</li></ul></li></ul><ul id="231bd835-2e5b-805a-8024-ec7b35ccd254" class="bulleted-list"><li style="list-style-type:circle"><strong>통합 커뮤니케이션 대시보드:</strong> 인플루언서와의 커뮤니케이션 현황(회신, 관심, 계약 등)을 캠페인별로 추적하고 관리하는 기능.<ul id="231bd835-2e5b-806f-8c58-d616cde19c4c" class="bulleted-list"><li style="list-style-type:square">커뮤니케이션 로그 DB</li></ul><ul id="231bd835-2e5b-80a8-9706-d2c178ab4d5b" class="bulleted-list"><li style="list-style-type:square">상태 관리 보드 (칸반 등)</li></ul></li></ul><ul id="231bd835-2e5b-8017-86c3-f00f91c83a11" class="bulleted-list"><li style="list-style-type:circle"><strong>프로세스 상태 자동화:</strong> 이메일 회신 등 특정 이벤트 발생 시, 인플루언서의 상태를 자동으로 변경하여 수동 태깅 작업을 제거.<ul id="231bd835-2e5b-80e1-be10-e2dfa9991fb7" class="bulleted-list"><li style="list-style-type:square">상태 자동 업데이트 로직</li></ul><ul id="231bd835-2e5b-8061-bd39-d1596c00d93c" class="bulleted-list"><li style="list-style-type:square">담당자 알림 기능</li></ul></li></ul></li></ul><h3 id="231bd835-2e5b-804c-b22d-e1f6f3cb1ae6" class=""><strong>Phase 4: 지능화 및 플랫폼 확장 - 데이터 기반 예측과 전략적 의사결정 지원</strong></h3><ul id="231bd835-2e5b-808b-8898-f8f867012ed8" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 과거 데이터에 기반한 사후 분석이 아닌, 미래를 예측하는 전략의 부재. 시장 트렌드나 새로운 기회를 감에 의존하여 포착하는 방식.</li></ul><ul id="231bd835-2e5b-8041-98c4-db7f048ae16b" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> 축적된 데이터를 분석하여 시장 트렌드를 예측하고, 캠페인 목표에 맞는 최적의 인플루언서를 시스템이 추천해주는 지능형 플랫폼으로 발전시킵니다.</li></ul><ul id="231bd835-2e5b-801c-b58e-c930dc45548d" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="231bd835-2e5b-803e-96cf-c76ea656246d" class="bulleted-list"><li style="list-style-type:circle">데이터에 기반한 전략적 의사결정으로 캠페인 성공 확률 극대화.</li></ul><ul id="231bd835-2e5b-80c8-bbbe-e23e77d4a6aa" class="bulleted-list"><li style="list-style-type:circle">경쟁사보다 먼저 시장의 트렌드를 읽고 유망한 인플루언서를 선점할 수 있는 기회 확보.</li></ul><ul id="231bd835-2e5b-8093-b513-ffaa0e2f18b4" class="bulleted-list"><li style="list-style-type:circle">플랫폼의 분석/예측 기능을 통해 비즈니스의 핵심 경쟁력을 창출하고, 장기적인 성장 동력 마련.</li></ul></li></ul><ul id="231bd835-2e5b-80b0-a027-d56202e7420b" class="bulleted-list"><li style="list-style-type:disc"><strong>기간:</strong> 약 6개월</li></ul><ul id="231bd835-2e5b-807e-a09c-e79a0e93aad4" class="bulleted-list"><li style="list-style-type:disc"><strong>가견적:</strong> <strong>총 19.0 M/M</strong> (CSSO 4, Designer 4, T-Lead 5.5, Developer 5.5)</li></ul><ul id="231bd835-2e5b-8052-91d5-c5ebeee7c5da" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 구축 내용 (Business-driven IA):</strong><ul id="231bd835-2e5b-80ef-85d6-cbb555e3c29c" class="bulleted-list"><li style="list-style-type:circle"><strong>시장 트렌드 분석:</strong> 콘텐츠 데이터를 분석하여 인기 토픽, 키워드, 장르의 변화를 시각적으로 제공.<ul id="231bd835-2e5b-8078-838d-c6df68a0053a" class="bulleted-list"><li style="list-style-type:square">트렌드 데이터 웨어하우스</li></ul><ul id="231bd835-2e5b-804c-ba0c-e326096d3788" class="bulleted-list"><li style="list-style-type:square">트렌드 분석 및 시각화</li></ul></li></ul><ul id="231bd835-2e5b-80a7-9063-d3200e5303d7" class="bulleted-list"><li style="list-style-type:circle"><strong>전략적 인플루언서 추천:</strong> 캠페인 목표(예: 특정 장르 음원 홍보)에 가장 부합하는 최적의 인플루언서를 시스템이 추천하는 기능.<ul id="231bd835-2e5b-80a8-a9ed-dbe18e51d502" class="bulleted-list"><li style="list-style-type:square">추천 엔진 (캠페인 목표 기반)</li></ul></li></ul><ul id="231bd835-2e5b-802b-a11b-f7b0d9e53211" class="bulleted-list"><li style="list-style-type:circle"><strong>심층 성과 리포팅:</strong> 캠페인 ROI, 채널별 효율성 등 비즈니스 의사결정을 위한 다각적인 분석 대시보드.<ul id="231bd835-2e5b-80b7-a939-c2336df14a9e" class="bulleted-list"><li style="list-style-type:square">ROI 분석 대시보드</li></ul></li></ul><ul id="231bd835-2e5b-80c7-953e-f7217f351a25" class="bulleted-list"><li style="list-style-type:circle"><strong>신규 채널 R&amp;D (DM 등):</strong> 기술적 제약이 있는 신규 섭외 채널에 대한 자동화 가능성 연구 및 테스트.<ul id="231bd835-2e5b-80cf-ab7c-cf7f53c20032" class="bulleted-list"><li style="list-style-type:square">DM 자동화 PoC</li></ul></li></ul></li></ul><hr id="233bd835-2e5b-8081-96e2-f518d47fe190"/><h3 id="233bd835-2e5b-80c5-ab82-c0a08f995dc4" class="">4. Option 2: SaaS형 - 단계별 제안 및 가견적</h3><p id="233bd835-2e5b-8040-9a0e-e38133df3412" class="">본 제안은, 막대한 초기 투자와 긴 개발 기간이 소요되는 자체 플랫폼 구축 대신, VibersAI의 <strong>지능형 AI 에이전트 플랫폼 &#x27;Maestro&#x27;</strong>를 기반으로 한 Contents Technologies의 문제 해결을 위한 맞춤형 솔루션을 SaaS 형태로 즉시 도입하여 이러한 문제들을 빠르고 효율적으로 해결하는 것을 목표로 합니다.</p><h3 id="233bd835-2e5b-8095-9eb4-f7de5e436981" class=""><strong>Maestro 소개</strong></h3><p id="233bd835-2e5b-8047-9eed-ed5e9b01c445" class="">Maestro는 사용자가 프로젝트 목표를 설정하는 것만으로, 과업 수행에 필요한 최적의 협업 전략을 스스로 설계하고 그에 맞는 AI 전문가 팀을 자동으로 구성하고, 각 전문가들은 필요한 기능들에 맞는 툴들을 사용하여 프로젝트를 자율적으로 성공으로 이끌어내는 혁신적인 AI 에이전트 플랫폼입니다. 단순한 조수를 넘어, Maestro는 &#x27;전략 설계자&#x27;, &#x27;현장 지휘관&#x27;, 그리고 결과물을 비판적으로 검증하는 &#x27;레드팀&#x27;으로 구성된 유기적인 팀을 통해 복잡한 과업을 해결하고 결과물의 논리적 완성도를 극대화합니다. 이를 통해 고객은 더 이상 개별 업무를 지시하고 관리하는 실무자가 아닌, AI 전문가 팀의 집단 지성을 활용해 프로젝트 전체를 지휘하는 &#x27;프로젝트 총괄&#x27;로서 최종 의사결정과 같은 핵심적인 고부가가치 활동에만 집중할 수 있습니다.</p><figure id="233bd835-2e5b-801c-a706-d66d6b7a8346" class="image"><a href="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/Screenshot_2025-07-17_at_10.03.01_PM.png"><img style="width:3364px" src="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/Screenshot_2025-07-17_at_10.03.01_PM.png"/></a></figure><h3 id="233bd835-2e5b-8044-835d-e8a38bf3445a" class=""><strong>Phase 1: 단기간 가치 창출 - 인플루언서 가치 평가 자동화 및 데이터 중앙화</strong></h3><ul id="233bd835-2e5b-8072-9733-dc3bfa3f14f7" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 주관적이고 반복적인 단가 측정 및 데이터 관리 업무.</li></ul><ul id="233bd835-2e5b-8042-8d5a-db2b3146085f" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> Maestro의 코어 기능을 사용하고, Content Technologies의 맞춤형 인플루언서 마케팅 자동화 플랫폼 기반을 구축하여 인플루언서들의 가치를 객관적으로 평가하고 모든 정보를 중앙에서 관리합니다.</li></ul><ul id="233bd835-2e5b-80a0-9798-f742332e51e8" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="233bd835-2e5b-8015-861b-ca4d62dbcd66" class="bulleted-list"><li style="list-style-type:circle">단가 측정에 소요되는 높은 양의 수작업 제거.</li></ul><ul id="233bd835-2e5b-8061-941f-cca7cecb5fa1" class="bulleted-list"><li style="list-style-type:circle">&#x27;평균의 함정&#x27;을 회피하는 공정한 가격 모델을 통한 협상력 증대.</li></ul><ul id="233bd835-2e5b-80df-9f63-caad27976bd0" class="bulleted-list"><li style="list-style-type:circle">모든 인플루언서 정보를 인플루언서 데이터 허브에 자동 축적하며, 관련 정보를 대시보드에서 관리할 수 있습니다.</li></ul></li></ul><ul id="233bd835-2e5b-8020-bceb-eae679ceea56" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 기간:</strong> <strong>약 1.5개월</strong></li></ul><ul id="233bd835-2e5b-80c0-bdee-e780e2f81802" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 가격: </strong><code>TBD</code></li></ul><ul id="233bd835-2e5b-800d-ab6b-ed3cf60261a7" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 제공 기능 (SaaS):</strong><ul id="233bd835-2e5b-8087-933d-d366d4243afb" class="bulleted-list"><li style="list-style-type:circle"><strong>인플루언서 데이터 허브:</strong> 기존 크롤링 DB 연동, 프로필/지표/스코어 통합 관리.</li></ul><ul id="233bd835-2e5b-8062-9479-f55921feffa9" class="bulleted-list"><li style="list-style-type:circle"><strong>자동 가치 평가 솔루션:</strong> 통계 기반 가치 평가 에이전트 및 LLM 기반 콘텐츠 특성 분석 에이전트 작동.</li></ul><ul id="233bd835-2e5b-806d-8b26-d51e88d207ab" class="bulleted-list"><li style="list-style-type:circle"><strong>운영 관리자 포털:</strong> Maestro 내 인플루언서 대시보드 및 단가 검토/확정 기능 제공.</li></ul></li></ul><h3 id="233bd835-2e5b-80e2-a14f-d146eecbbdd3" class=""><strong>Phase 2: 고도화 - 커뮤니케이션 내재화 및 성과 기반 스코어링</strong></h3><ul id="233bd835-2e5b-80a8-8be9-d373f318c378" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 외부 툴 의존성 및 학습되지 않는 고정된 평가 방식.</li></ul><ul id="233bd835-2e5b-8048-b1c7-edcbe04edd6d" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> Maestro의 커뮤니케이션 및 학습 에이전트를 사용하고, Contents Technologies의 플랫폼 맞춤형 대시보드를 구성하여 섭외 프로세스를 내재화하고 성과 기반의 선순환 학습 루프를 구축합니다.</li></ul><ul id="233bd835-2e5b-806e-8d90-e4c67c8fffd4" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="233bd835-2e5b-8063-b487-c39a52387d5a" class="bulleted-list"><li style="list-style-type:circle">섭외 커뮤니케이션 전 과정에 대한 완전한 통제권 확보.</li></ul><ul id="233bd835-2e5b-80f7-90c8-c55bdcc25182" class="bulleted-list"><li style="list-style-type:circle">캠페인을 진행할수록 스스로 똑똑해지는 평가 모델 확보.</li></ul><ul id="233bd835-2e5b-8078-8441-d5a80270c525" class="bulleted-list"><li style="list-style-type:circle">실제 성과가 좋은 &#x27;진짜&#x27; 인플루언서 발굴 및 관계 구축.</li></ul></li></ul><ul id="233bd835-2e5b-80cc-a8e5-d98fd8a5636b" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 기간:</strong> <strong>약 2개월 이내</strong></li></ul><ul id="233bd835-2e5b-8056-9016-de99ab2a972b" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 가격: </strong><code>TBD</code></li></ul><ul id="233bd835-2e5b-80bd-9d7b-d67195797e11" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 제공 기능 (SaaS):</strong><ul id="233bd835-2e5b-80ee-be29-da9f03291e6c" class="bulleted-list"><li style="list-style-type:circle"><strong>자체 이메일 발송 기능:</strong> 이메일 자동화, 템플릿 관리, 스케줄링 에이전트 활성화/통합 및 해당 기능 사용을 위한 대시보드.</li></ul><ul id="233bd835-2e5b-8090-812e-c20a62110de7" class="bulleted-list"><li style="list-style-type:circle"><strong>캠페인 성과 기록:</strong> 캠페인별 성과 DB에 데이터 자동 축적.</li></ul><ul id="233bd835-2e5b-8049-9960-f1e89d29f62b" class="bulleted-list"><li style="list-style-type:circle"><strong>자기 학습 평가 모델:</strong> 성과 데이터 피드백 루프 및 LLM 기반 평가 로직 자동 강화.</li></ul></li></ul><h3 id="233bd835-2e5b-8055-9035-f7ec1b3b70ad" class=""><strong>Phase 3: 플랫폼 통합 - 캠페인 전 과정의 체계적인 관리</strong></h3><ul id="233bd835-2e5b-8008-b5df-c00b18146f15" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 여러 채널(이메일, 엑셀, 메신저)에 흩어져 있는 캠페인 현황. 누가 누구와 어떤 단계까지 이야기했는지 파악하기 어려운 커뮤니케이션 파편화. 수동적인 캠페인 현황 관리.</li></ul><ul id="233bd835-2e5b-80eb-bb28-ef2c0cfc9ed3" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> Maestro의 &#x27;오케스트레이터&#x27;를 통해 섭외부터 성과 확인까지, 캠페인의 전 과정을 자동화된 워크플로우로 통합 관리. 해당 워크플로우를 사용하고 확인할 수 있는 Contents Technologies 맞춤형 대시보드 구축.</li></ul><ul id="233bd835-2e5b-808d-b7ca-d43b5652aa57" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="233bd835-2e5b-80ad-ac2b-d921e125d5a5" class="bulleted-list"><li style="list-style-type:circle">모든 팀원이 캠페인 진행 상황을 한눈에 파악하는 &#x27;Single Source of Truth&#x27; 구축.</li></ul><ul id="233bd835-2e5b-8041-be3d-c9ff090045d4" class="bulleted-list"><li style="list-style-type:circle">휴먼 에러 방지 및 프로세스 누락 없는 체계적인 캠페인 운영.</li></ul></li></ul><ul id="233bd835-2e5b-80ef-a983-d79c6f8ee8a3" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 기간: 약 4개월</strong></li></ul><ul id="233bd835-2e5b-80af-9957-f89192e4047f" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 가격: </strong><code>TBD</code></li></ul><ul id="233bd835-2e5b-8013-a153-f0349c38234d" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 제공 기능 (SaaS):</strong><ul id="233bd835-2e5b-8041-b597-fc3b48f91505" class="bulleted-list"><li style="list-style-type:circle"><strong>캠페인 관리 시스템:</strong> 캠페인 생성/목표 설정 기능.</li></ul><ul id="233bd835-2e5b-8083-992e-e30456f3b483" class="bulleted-list"><li style="list-style-type:circle"><strong>통합 커뮤니케이션 대시보드:</strong> 커뮤니케이션 로그 DB 및 상태 관리 보드(칸반) 제공.</li></ul><ul id="233bd835-2e5b-8092-abe4-e452621a98c3" class="bulleted-list"><li style="list-style-type:circle"><strong>프로세스 상태 자동화:</strong> 상태 자동 업데이트 및 담당자 알림 에이전트 작동.</li></ul></li></ul><h3 id="233bd835-2e5b-8009-bbd3-da931dcbba79" class=""><strong>Phase 4: 지능화 및 플랫폼 확장 - 데이터 기반 예측과 전략적 의사결정 지원</strong></h3><ul id="233bd835-2e5b-80c9-9fab-c5bec221afc2" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 감에 의존하거나 수동적으로 데이터를 수집하여 진행하는 사후 분석 및 미래 전략 부재.</li></ul><ul id="233bd835-2e5b-80f4-b67b-cf1a4daa9219" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> Maestro의 고급 분석 및 예측 지능화 멀티 에이전트 워크플로우를 활성화하여, 데이터 기반의 예측과 전략적 의사결정이 가능한 지능형 플랫폼으로 활용합니다.</li></ul><ul id="233bd835-2e5b-80cc-8c31-ea4fc5d7a9d1" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="233bd835-2e5b-80f3-9c52-fd5bb51fcc4b" class="bulleted-list"><li style="list-style-type:circle">데이터에 기반한 전략적 의사결정으로 캠페인 성공 확률 극대화.</li></ul><ul id="233bd835-2e5b-8032-b449-eddd65c8c587" class="bulleted-list"><li style="list-style-type:circle">경쟁사보다 먼저 시장 트렌드를 읽고 유망 인플루언서 선점.</li></ul><ul id="233bd835-2e5b-80fc-ae17-efb676fd1f94" class="bulleted-list"><li style="list-style-type:circle">플랫폼의 분석/예측 기능을 통한 핵심 비즈니스 경쟁력 창출.</li></ul></li></ul><ul id="233bd835-2e5b-80d1-aae4-c7bfb8d9fc8e" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 기간:</strong> <strong>약 5개월</strong></li></ul><ul id="233bd835-2e5b-8000-bfea-ed6009d8870b" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 가격: </strong><code>TBD</code></li></ul><ul id="233bd835-2e5b-8060-aeb8-cef86d6b255a" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 제공 기능 (SaaS):</strong><ul id="233bd835-2e5b-806c-9b5a-f3c149c09b7e" class="bulleted-list"><li style="list-style-type:circle"><strong>시장 트렌드 분석:</strong> 트렌드 분석 및 시각화를 위한 Maestro 멀티 에이전트 워크플로우 및 시각화 대시보드.</li></ul><ul id="233bd835-2e5b-8009-87aa-dab88af7e5f0" class="bulleted-list"><li style="list-style-type:circle"><strong>전략적 인플루언서 추천:</strong> 캠페인 목표를 기반으로 한 추천 에이전트 활용.</li></ul><ul id="233bd835-2e5b-80e6-930d-d461c3623360" class="bulleted-list"><li style="list-style-type:circle"><strong>심층 성과 리포팅: </strong>AI를 활용하여 더욱 정확한 ROI 분석 대시보드.</li></ul><ul id="233bd835-2e5b-8004-8595-c38887e3255a" class="bulleted-list"><li style="list-style-type:circle"><strong>신규 채널 R&amp;D:</strong> Maestro 에이전트를 활용한 DM 등 신규 채널 자동화 PoC 지원.</li></ul></li></ul><hr id="233bd835-2e5b-8017-8b9b-dcbd2bec5b26"/><h3 id="233bd835-2e5b-8004-a35b-c7f64dedf14e" class=""><strong>6. Option3: 하이브리드 솔루션 (Hybrid): 맞춤 플랫폼 소유 + 최신 AI 엔진 구독</strong></h3><p id="233bd835-2e5b-8088-abd9-d26e942fd35a" class="">본 제안은, Contents Technologies의 문제 해결을 위한 맞춤형 솔루션 구축과 VibersAI의 <strong>지능형 AI 에이전트 &#x27;Maestro Core&#x27;</strong>를 하이브리드 솔루션으로 함께 사용하여, Contents Technologies의 문제들을 빠르고 효율적으로 해결하는 것을 목표로 합니다.</p><p id="233bd835-2e5b-8037-9d5c-fe2c9b5fe0aa" class=""><strong>눈에 보이는 프론트엔드 대시보드와 핵심 데이터가 담긴 데이터베이스는 Contents Technologies가 직접 소유(구축형)</strong>하고, 인플루언서 가치 평가, 학습, 추천 등을 수행하는 <strong>AI 에이전트의 &#x27;뇌(Brain)&#x27;는 VibersAI의 SaaS 플랫폼 &#x27;Maestro AI Core&#x27;를 구독하여 연동</strong>하는 방식입니다.</p><h3 id="233bd835-2e5b-8085-a79e-fcfe633666aa" class=""><strong>인플루언서 마케팅 자동화 플랫폼 구축 옵션 비교표</strong></h3><p id="233bd835-2e5b-8060-b5e7-fbc915d03dc7" class="">하이브리드 솔루션 제안서에 앞서, 아래 비교표를 통해 각 옵션의 특징을 면밀히 검토하시고, 귀사의 비즈니스 목표에 가장 부합하는 최적의 경로를 선택하시기 바랍니다. 저희는 <strong>&#x27;하이브리드형&#x27;</strong> 모델이 구축형의 &#x27;자산화&#x27;와 SaaS의 &#x27;기술적 민첩성&#x27;이라는 핵심 장점들을 결합하여, 단점과 고려사항들을 효과적으로 해결하는 가장 균형 잡힌 전략이라고 판단하고 있습니다.</p><table id="233bd835-2e5b-801e-a388-d401537f89ae" class="simple-table"><tbody><tr id="233bd835-2e5b-800a-8fab-ee2b18d79e86"><td id="&lt;NHI" class="" style="width:68.9921875px">구분</td><td id="H[w&lt;" class=""><strong>Option 1: 단일 구축형 (SI)</strong></td><td id="yO&gt;z" class=""><strong>Option 2: SaaS형</strong></td><td id="LHbc" class=""><strong>Option 3: 하이브리드형 (구축형 + SaaS)</strong></td></tr><tr id="233bd835-2e5b-8044-b00c-fdced18bbf69"><td id="&lt;NHI" class="" style="width:68.9921875px"><strong>개요</strong></td><td id="H[w&lt;" class="">모든 시스템(프론트엔드, DB, AI 로직)을 독립적으로 개발하여 소유권을 이전받는 전통적인 방식</td><td id="yO&gt;z" class="">VibersAI의 AI 플랫폼 &#x27;Maestro&#x27;를 구독하여 사용하는 방식</td><td id="LHbc" class="">프론트엔드 대시보드와 DB는 맞춤형으로 구축하고, AI의 핵심 두뇌(Agent)는 &#x27;Maestro Core&#x27; SaaS를 연동하여 사용하는 방식</td></tr><tr id="233bd835-2e5b-8008-9882-caf5f612d090"><td id="&lt;NHI" class="" style="width:68.9921875px"><strong>장점</strong></td><td id="H[w&lt;" class=""><strong>- 완전한 소유권 및 제어:</strong> 시스템 전체에 대한 100% 소유권 확보로, 비즈니스 로직에 맞춘 무제한적 커스터마이징 가능<strong><br/><br/>- 독립적 데이터 자산화:<br/></strong> 모든 데이터를 내부 DB에 직접 축적 및 관리하여 독보적인 데이터 자산 구축<br/><br/>- <br/><strong> 장기적 자산 가치:</strong> 초기 투자 후 추가적인 라이선스 비용 없이 영구적인 회사 자산으로 귀속</td><td id="yO&gt;z" class=""><strong>- 빠른 도입 및 가치 실현:</strong> VibersAI의 솔루션을 활용 및 맞춤형 UI/UX를 통해 단기간 내에 핵심 기능 도입 및 ROI 창출 가능<br/><br/>-<br/><strong> 낮은 초기 투자 비용:</strong> 대규모 초기 개발 비용 없이 월/연간 구독료만으로 즉시 시작 가능<br/><br/>-<br/><strong> 최신 AI 기술 즉시 활용:</strong> VibersAI가 AI 모델 및 플랫폼을 지속적으로 업데이트하므로, 항상 최신 기술을 유지보수 부담 없이 사용</td><td id="LHbc" class=""><strong>- 맞춤형 UI/UX 및 데이터 소유:</strong> 사용자에게 가장 중요한 프론트엔드와 핵심 데이터 DB는 귀사에 맞춰 직접 구축 및 소유<br/><br/>-<br/><strong> 최신 AI 기술 즉시 활용:</strong> 가장 복잡하고 빠르게 변화하는 AI 로직은 검증된 &#x27;Maestro&#x27;를 통해 즉시 도입하여 기술 노후화 위험 제거<br/><br/>-<br/><strong> 균형 잡힌 비용 구조:</strong> 전체 시스템을 구축하는 것보다 초기 투자 비용을 대폭 절감하면서도 핵심 자산 확보 가능<br/><br/>-<br/><strong> 신속한 개발 및 시장 대응:</strong> AI 파트 개발 기간이 생략되어 전체 프로젝트 기간을 단축하고, 시장 변화에 빠르게 대응<br/><br/>- <br/><strong> 장기적 자산 가치:</strong> 각 Phase 별 초기 투자 후 추가적인 라이선스 비용 없이 플랫폼 대시보드 및 중요 데이터베이스를 추가적인 마이그레이션 비용 없이 영구적인 회사 자산으로 귀속</td></tr><tr id="233bd835-2e5b-80d4-83c5-debd84ddc5df"><td id="&lt;NHI" class="" style="width:68.9921875px"><strong>단점</strong></td><td id="H[w&lt;" class=""><strong>- 높은 초기 투자 비용:</strong> 전체 시스템 개발을 위한 막대한 초기 자본 및 시간 투자가 필수적 (제안서상 총 49.5 M/M)<br/><br/>- <br/><strong>긴 개발 및 도입 기간:</strong> 최종 단계까지 수개월에서 1년 이상이 소요되어 시장 변화에 대한 즉각적 대응이 어려움<br/><br/>- <br/><strong>유지보수 및 고도화 책임:</strong> 버그 수정, 보안 업데이트, 기술 스택 고도화 등 모든 운영 및 유지보수 책임을 내부적으로 해결해야 함</td><td id="yO&gt;z" class=""><strong>- 제한적인 커스터마이징:</strong> SaaS 플랫폼의 프레임워크 내에서만 기능 설정 및 변경이 가능하여, 고유한 비즈니스 로직을 100% 반영하기 어려울 수 있음<br/><br/>- <br/><strong>데이터 및 기능의 벤더 종속성:</strong> 모든 데이터와 핵심 기능이 외부 플랫폼에 의존하게 되어, 장기적으로 벤더 종속(Lock-in)의 위험이 발생<br/><br/>- <br/><strong>장기적인 총소유비용(TCO):</strong> 구독 기간이 길어질수록 누적 비용이 구축 비용을 초과할 수 있음</td><td id="LHbc" class="">- <strong>혼합형 비용 모델:</strong> 초기 구축 비용과 지속적인 SaaS 구독료가 함께 발생하여 비용 구조에 대한 명확한 이해가 필요<br/><br/></td></tr><tr id="233bd835-2e5b-8040-b5a8-f851f2939054"><td id="&lt;NHI" class="" style="width:68.9921875px"><strong>잠재적 고려사항</strong></td><td id="H[w&lt;" class="">- 플랫폼을 독자적으로 운영하고 발전시킬 <strong>내부 전담 기술팀(개발자, 기획자) 확보</strong>가 필수적<br/><br/>- 대규모 초기 자본 투자를 감당할 수 있는 <br/><strong>예산 계획<br/><br/>-<br/></strong> AI 기술의 빠른 변화에 어떻게 <strong>지속적으로 대응하고 투자</strong>할 것인지에 대한 장기적 로드맵</td><td id="yO&gt;z" class="">- Customization 후 우리 회사의 <strong>핵심 워크플로우</strong>가 SaaS가 제공하는 기능과 얼마나 잘 부합하는지에 대한 Fit-Gap 분석<br/><br/>- 외부 플랫폼에 데이터를 저장하고 처리하는 것에 대한 <br/><strong>데이터 보안 및 거버넌스 정책</strong> 검토<br/><br/>- <br/><strong>장기적 관점의 총소유비용(TCO)</strong> 평가</td><td id="LHbc" class="">- <strong>구축형 자산과 SaaS 서비스 간의 명확한 역할과 책임 범위(R&amp;R) 정의<br/><br/>-<br/></strong> VibersAI와의 <strong>긴밀한 기술 파트너십</strong>을 통해 안정적인 시스템 통합 및 운영 전략 수립<br/><br/>- 초기 투자와 운영 비용을 모두 고려한 <br/><strong>종합적인 ROI 및 TCO 분석</strong></td></tr></tbody></table><hr id="233bd835-2e5b-805c-af2d-cae926f82160"/><p id="233bd835-2e5b-80b0-9954-e96c8f5fefa2" class="">
+</p><p id="233bd835-2e5b-801f-9c85-f4135dec2ad8" class=""><em>(설명: 좌측엔 &#x27;Contents Tech 소유 영역: 맞춤형 대시보드, 전용 데이터베이스&#x27;, 우측엔 &#x27;VibersAI 제공 SaaS 영역: Maestro AI Core (가치평가, 학습, 추천 에이전트)&#x27;, 그리고 둘 사이를 잇는 &#x27;API 연동&#x27;을 보여주는 다이어그램을 삽입하면 이해도가 극대화됩니다.)</em></p><figure id="233bd835-2e5b-800f-85f2-cc7aa10d4ad9" class="image"><a href="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/7e4abdb3-d0a4-4600-abe6-4fccf1d14204.png"><img style="width:543.7553101104503px" src="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/7e4abdb3-d0a4-4600-abe6-4fccf1d14204.png"/></a></figure><h3 id="233bd835-2e5b-8019-a713-cba1c5568598" class=""><strong>Phase 1: 단기간 기반 구축 - 인플루언서 가치 평가 자동화 및 데이터 중앙화</strong></h3><ul id="233bd835-2e5b-8056-9374-eb7a0fa288d4" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 주관적이고 반복적인 단가 측정 및 데이터 관리 업무.</li></ul><ul id="233bd835-2e5b-809a-b7a4-c4868ce71482" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> Maestro의 코어 기능을 활성화하여, 인플루언서 가치를 객관적으로 평가하고 모든 정보를 중앙에서 관리합니다.</li></ul><ul id="233bd835-2e5b-8070-9cee-f12085214a22" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 기간:</strong> <strong>약 1.5개월</strong></li></ul><ul id="233bd835-2e5b-8050-af59-cefcdc47f2cf" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 가격</strong></li></ul><ul id="233bd835-2e5b-8085-9dcf-e8b6242e53b1" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 제공 기능:</strong><ul id="233bd835-2e5b-80d9-987b-d5fa0dd95846" class="bulleted-list"><li style="list-style-type:circle"><strong>[구축형] Contents Tech 소유 영역:</strong><ul id="233bd835-2e5b-804a-89f0-fe541696f4de" class="bulleted-list"><li style="list-style-type:square"><strong>맞춤형 인플루언서 관리 대시보드 (UI/UX):</strong> 귀사 브랜딩과 워크플로우에 최적화된 화면 설계 및 개발</li></ul><ul id="233bd835-2e5b-8055-acd3-f8396c2ccc92" class="bulleted-list"><li style="list-style-type:square"><strong>전용 인플루언서 데이터 허브 (DB):</strong> 모든 인플루언서 프로필, 성과, 커뮤니케이션 로그를 저장할 귀사 소유의 데이터베이스 구축</li></ul></li></ul><ul id="233bd835-2e5b-80d9-981c-dbb819d6908f" class="bulleted-list"><li style="list-style-type:circle"><strong>[SaaS] Maestro AI Core 연동 기능:</strong><ul id="233bd835-2e5b-803b-b55f-f319f1e68399" class="bulleted-list"><li style="list-style-type:square"><strong>AI 가치 평가 에이전트:</strong> 크롤링된 데이터를 API로 받아, 객관적인 제안 단가를 산출하여 귀사 DB에 저장</li></ul><ul id="233bd835-2e5b-80a8-8732-d1e9a6259578" class="bulleted-list"><li style="list-style-type:square"><strong>AI 콘텐츠 특성 분석 에이전트:</strong> 댓글 등 텍스트 데이터를 분석하여 키워드, 감성 분석 결과를 귀사 DB에 제공</li></ul></li></ul></li></ul><h3 id="233bd835-2e5b-8013-b88e-fc87dd5f859d" class=""><strong>Phase 2: 고도화 - 커뮤니케이션 내재화 및 성과 기반 스코어링</strong></h3><ul id="233bd835-2e5b-80e1-86f3-e7545952e2da" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 외부 툴 의존성 및 학습되지 않는 고정된 평가 방식.</li></ul><ul id="233bd835-2e5b-80a2-9f75-eca517569c41" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> Maestro의 커뮤니케이션 및 학습 모듈을 활성화하여, 섭외 프로세스를 내재화하고 성과 기반의 선순환 학습 루프를 구축합니다.</li></ul><ul id="233bd835-2e5b-804a-adfe-e9480d25e9b9" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="233bd835-2e5b-80f6-b051-d7955b30393e" class="bulleted-list"><li style="list-style-type:circle">섭외 커뮤니케이션 전 과정에 대한 완전한 통제권 확보.</li></ul><ul id="233bd835-2e5b-80f5-aef5-f5eaf73f56bd" class="bulleted-list"><li style="list-style-type:circle">캠페인을 진행할수록 스스로 똑똑해지는 평가 모델 확보.</li></ul><ul id="233bd835-2e5b-80f1-9711-d9b8f5e06724" class="bulleted-list"><li style="list-style-type:circle">실제 성과가 좋은 &#x27;진짜&#x27; 인플루언서 발굴 및 관계 구축.</li></ul></li></ul><ul id="233bd835-2e5b-801f-80e6-c00503b8e62a" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 기간:</strong> <strong>약 2~3개월</strong></li></ul><ul id="233bd835-2e5b-806f-a488-c248d7f8fea7" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 가격</strong></li></ul><ul id="233bd835-2e5b-8018-b8a1-e7e3411980c8" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 제공 기능:</strong><ul id="233bd835-2e5b-8002-a47f-dfb79e1a3164" class="bulleted-list"><li style="list-style-type:circle"><strong>[구축형] Contents Tech 소유 영역:</strong><ul id="233bd835-2e5b-807b-88e5-f5af551b9fdc" class="bulleted-list"><li style="list-style-type:square"><strong>통합 커뮤니케이션 UI:</strong> 플랫폼 내에서 이메일 템플릿을 관리하고 발송 내역을 확인할 수 있는 화면 개발</li></ul></li></ul><ul id="233bd835-2e5b-8067-9218-cd91ec330cb5" class="bulleted-list"><li style="list-style-type:circle"><strong>[SaaS] Maestro AI Core 연동 기능:</strong><ul id="233bd835-2e5b-8096-9189-c0bad759f4b3" class="bulleted-list"><li style="list-style-type:square"><strong>AI 커뮤니케이션 에이전트:</strong> 템플릿과 발송 리스트를 받아 이메일 발송 자동화 및 결과 트래킹 수행</li></ul><ul id="233bd835-2e5b-805c-9d6a-ce2ef88b5c6f" class="bulleted-list"><li style="list-style-type:square"><strong>AI 자기 학습 에이전트:</strong> 귀사 DB에 축적된 캠페인 성과 데이터를 주기적으로 학습하여 가치 평가 모델을 자동 정교화</li></ul></li></ul></li></ul><h3 id="231bd835-2e5b-8025-bb97-c01611d1a52b" class=""><strong>Phase 3: 플랫폼 통합 - 캠페인 전 과정의 체계적인 관리</strong></h3><ul id="231bd835-2e5b-80c4-9eae-db9b0d453a90" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 파편화된 커뮤니케이션 및 수동적인 캠페인 현황 관리.</li></ul><ul id="231bd835-2e5b-80bb-8f60-cee761bc11ac" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> Maestro의 &#x27;오케스트레이터&#x27;를 통해 섭외부터 성과 확인까지, 캠페인의 전 과정을 자동화된 워크플로우로 통합 관리합니다.</li></ul><ul id="231bd835-2e5b-809e-9157-f38532972b86" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="231bd835-2e5b-8003-9397-e2e1f3aac2b0" class="bulleted-list"><li style="list-style-type:circle">모든 팀원이 캠페인 진행 상황을 한눈에 파악하는 &#x27;Single Source of Truth&#x27; 구축.</li></ul><ul id="231bd835-2e5b-80b1-a880-e46d6154a90e" class="bulleted-list"><li style="list-style-type:circle">휴먼 에러 방지 및 프로세스 누락 없는 체계적인 캠페인 운영.</li></ul></li></ul><ul id="231bd835-2e5b-8016-9c8e-c36a80bca0b1" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 기간: 약 3개월</strong></li></ul><ul id="233bd835-2e5b-80e7-8acb-c556d9778732" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 가격</strong></li></ul><ul id="231bd835-2e5b-80c7-bf0d-cd2c05fe7aca" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 제공 기능 (Maestro):</strong><ul id="233bd835-2e5b-8083-a4d0-cad71f5c8ae5" class="bulleted-list"><li style="list-style-type:circle"><strong>[구축형] Contents Tech 소유 영역:</strong><ul id="233bd835-2e5b-80aa-ad27-ca666bb9aae1" class="bulleted-list"><li style="list-style-type:square"><strong>캠페인 관리 시스템:</strong> 캠페인 전 과정을 시각적으로 관리할 수 있는 맞춤형 UI 개발</li></ul><ul id="233bd835-2e5b-80f4-ab7e-c7d7da41c8d4" class="bulleted-list"><li style="list-style-type:square"><strong>통합 커뮤니케이션 대시보드:</strong> 커뮤니케이션 로그 DB 및 상태 관리 보드(칸반) 제공.</li></ul></li></ul><ul id="233bd835-2e5b-8097-b754-ebce8c4859fc" class="bulleted-list"><li style="list-style-type:circle"><strong>[SaaS] Maestro AI Core 연동 기능:</strong><ul id="233bd835-2e5b-80bd-9783-d0fda853ece7" class="bulleted-list"><li style="list-style-type:square"><strong>프로세스 상태 자동화 AI 오케스트레이터:</strong> 이메일 회신 등 이벤트 발생 시, 플랫폼 DB의 인플루언서 상태 값을 API를 통해 자동 업데이트 및 담당자 알림</li></ul></li></ul></li></ul><h3 id="231bd835-2e5b-80c6-a81d-c3a23eb8c2b1" class=""><strong>Phase 4: 지능화 및 플랫폼 확장 - 데이터 기반 예측과 전략적 의사결정 지원</strong></h3><ul id="231bd835-2e5b-80d4-ad33-cde5d0f1a4f8" class="bulleted-list"><li style="list-style-type:disc"><strong>해결할 문제:</strong> 감에 의존하는 사후 분석 및 미래 전략 부재.</li></ul><ul id="231bd835-2e5b-80c9-8bf4-e9e356be1904" class="bulleted-list"><li style="list-style-type:disc"><strong>구축 목표:</strong> Maestro의 고급 분석 에이전트를 활성화하여, 데이터 기반의 예측과 전략적 의사결정이 가능한 지능형 플랫폼으로 활용합니다.</li></ul><ul id="231bd835-2e5b-80e2-bbb3-de130da536d5" class="bulleted-list"><li style="list-style-type:disc"><strong>기대 효과:</strong><ul id="231bd835-2e5b-80b7-9999-f12181250840" class="bulleted-list"><li style="list-style-type:circle">데이터에 기반한 전략적 의사결정으로 캠페인 성공 확률 극대화.</li></ul><ul id="231bd835-2e5b-805b-bbb2-e5a3d66dbccb" class="bulleted-list"><li style="list-style-type:circle">경쟁사보다 먼저 시장 트렌드를 읽고 유망 인플루언서 선점.</li></ul><ul id="231bd835-2e5b-80a9-a9d8-dcf2ace86976" class="bulleted-list"><li style="list-style-type:circle">플랫폼의 분석/예측 기능을 통한 핵심 비즈니스 경쟁력 창출.</li></ul></li></ul><ul id="231bd835-2e5b-804e-8208-eead6d048beb" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 기간:</strong> <strong>약 4~5개월</strong></li></ul><ul id="233bd835-2e5b-8094-8a6f-d67c822561ee" class="bulleted-list"><li style="list-style-type:disc"><strong>예상 가</strong></li></ul><ul id="231bd835-2e5b-80da-947c-f7882484a084" class="bulleted-list"><li style="list-style-type:disc"><strong>주요 제공 기능 (Maestro):</strong><ul id="233bd835-2e5b-80cb-adae-d1a5ab6d94a6" class="bulleted-list"><li style="list-style-type:circle"><strong>[구축형] Contents Tech 소유 영역:</strong><ul id="233bd835-2e5b-8041-9387-d0aed6c55002" class="bulleted-list"><li style="list-style-type:square"><strong>신규 채널 R&amp;D:</strong> DM 등 신규 채널 자동화 PoC 지원.</li></ul><ul id="233bd835-2e5b-80f6-8091-d39d9f1732ec" class="bulleted-list"><li style="list-style-type:square"><strong>심층 성과 리포팅 대시보드:</strong> 귀사 DB의 데이터를 활용한 맞춤형 분석 및 시각화 화면 구현</li></ul></li></ul><ul id="233bd835-2e5b-80cf-bec1-f031d40ad8c4" class="bulleted-list"><li style="list-style-type:circle"><strong>[SaaS] Maestro AI Core 연동 기능:</strong><ul id="233bd835-2e5b-80e9-9d28-e414e4ef1c24" class="bulleted-list"><li style="list-style-type:square"><strong>AI 트렌드 분석:</strong> 시장 데이터와 귀사 데이터를 종합 분석하여 최적의 인플루언서 리스트와 트렌드 리포트를 API로 제공</li></ul><ul id="233bd835-2e5b-806d-ae03-c546c49d7e42" class="bulleted-list"><li style="list-style-type:square"><strong>전략적 인플루언서 추천:</strong> 캠페인 목표 기반 인플루언서 추천 에이전트</li></ul></li></ul></li></ul><hr id="233bd835-2e5b-80c0-bace-dda1615f4003"/><h3 id="233bd835-2e5b-80b6-a23d-d5fe4a6bc89b" class=""><strong>7. Information Architectures</strong></h3><h3 id="233bd835-2e5b-8074-9761-d5236516756f" class="">Phase 1</h3><figure id="231bd835-2e5b-80fe-b4e7-df801db7bcd9" class="image"><a href="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_phase1.png"><img style="width:3840px" src="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_phase1.png"/></a></figure><h3 id="233bd835-2e5b-8063-aa05-cc1bfff314b3" class="">Phase 2</h3><figure id="231bd835-2e5b-80cd-bcbb-c57348b0fcbe" class="image"><a href="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_phase2.png"><img style="width:3840px" src="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_phase2.png"/></a></figure><h3 id="233bd835-2e5b-8082-a030-c5c8912f530f" class="">Phase 3</h3><figure id="231bd835-2e5b-8026-9037-fd5b5f9ef43c" class="image"><a href="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_phase3.png"><img style="width:3840px" src="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_phase3.png"/></a></figure><h3 id="233bd835-2e5b-80cd-a766-e07f7657b086" class="">Phase 4</h3><figure id="231bd835-2e5b-8025-8dac-d08cfd579b58" class="image"><a href="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_phase4.png"><img style="width:3840px" src="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_phase4.png"/></a></figure><h3 id="233bd835-2e5b-8092-adca-e8ab092f500e" class="">Overall Platform</h3><figure id="231bd835-2e5b-80aa-91e3-f66fda39aee1" class="image"><a href="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_all.png"><img style="width:709.9869384765625px" src="%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A1%E1%86%AB%20%E1%84%86%E1%85%B5%E1%86%BE%20%E1%84%80%E1%85%A1%E1%84%80%E1%85%A7%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5-Contents%20Technologies%20231bd8352e5b80d1ae27ff36a61b8ae6/CT_all.png"/></a></figure><hr id="233bd835-2e5b-80fc-bb88-d2e7faaece79"/><h3 id="233bd835-2e5b-8018-a79b-f0da62377f92" class=""><strong>7. 결론 및 제언</strong></h3><p id="233bd835-2e5b-8035-b63d-ea6b2c4a203f" class=""><strong>단일 구축형(SI)</strong>은 &#x27;완전한 통제권&#x27;이라는 매력적인 장점이 있지만, 높은 초기 비용과 긴 개발 시간, 그리고 AI 기술을 지속적으로 따라가야 하는 무거운 책임이라는 명확한 단점을 가집니다. 반대로 <strong>SaaS형</strong>은 빠르고 저렴하게 시작할 수 있지만, 우리 회사만의 고유한 경쟁력을 시스템에 온전히 녹여내기 어렵고 데이터와 기능이 외부 플랫폼에 종속될 수 있습니다.</p><p id="233bd835-2e5b-80f6-8acc-ee9bd2ebe44c" class=""><strong>VibersAI가 제안하는 &#x27;하이브리드형&#x27; 모델은 이러한 양극단의 딜레마를 해결하는 가장 현실적이고 전략적인 대안입니다.</strong></p><p id="233bd835-2e5b-8077-abf9-f6ecc1dfc5b2" class="">귀사는 고객과 팀이 직접 마주하는 <strong>대시보드와 워크플로우, 그리고 가장 중요한 데이터의 소유권을 확보</strong>하여 비즈니스의 중심을 단단히 잡을 수 있습니다. 동시에, 가장 복잡하고 빠르게 발전하는 Agentic workflow를 포함한 <strong>AI 기술은 검증된 전문가 그룹인 저희 VibersAI의 &#x27;Maestro&#x27;에게 맡김</strong>으로써, 기술 투자에 대한 리스크 없이 항상 최첨단 인텔리전스를 활용할 수 있습니다.</p><p id="233bd835-2e5b-80e5-9b98-c47e41e577fb" class="">이는 초기 투자 부담을 줄이면서도 신속하게 시장에 대응하고, 장기적으로는 핵심 자산을 내재화하는<strong> 최적의 전략</strong>이 될 것이라 확신합니다.</p><hr id="233bd835-2e5b-8062-ae08-cbbecdd82c95"/><h3 id="231bd835-2e5b-80b1-9a0f-cc7ce23db3dd" class="">8. VibersAI의 약속</h3><ul id="231bd835-2e5b-80f9-9f06-c8b721493ff1" class="bulleted-list"><li style="list-style-type:disc"><strong>빠른 실행과 긴밀한 협업:</strong> 제안 수락 후 Contents Technologies의 타임라인에 맞추어 즉시 프로젝트에 착수할 수 있으며, 귀사의 개발자분이 프로젝트에 직접 참여하여 함께 성장할 수 있는 애자일 협업 환경을 제공하겠습니다.</li></ul><ul id="231bd835-2e5b-80ca-9563-e6d90c35b187" class="bulleted-list"><li style="list-style-type:disc"><strong>비즈니스 파트너십:</strong> 저희는 단순 개발을 넘어, 귀사의 비즈니스가 AI를 통해 어떻게 성장할 수 있을지 함께 고민하고 장기적인 성공을 지원하는 전략적 파트너가 되겠습니다.</li></ul><ul id="231bd835-2e5b-807c-b177-f008c8a1d671" class="bulleted-list"><li style="list-style-type:disc"><strong>투명한 커뮤니케이션:</strong> Sprint 0 및 프로젝트 Kick-off를 통해 Contents Technologies의 문제점과 요구 사항을 하나도 빠짐 없이 파악하고 이해하며, Weekly Success 미팅 및 Slack 등을 통한 커뮤니케이션을 지속적으로 진행하여 매 단계별 진행 상황과 이슈를 투명하게 공유합니다. 문서 기반으로 긴밀한 소통을 통해 빠지는 내용 없이 최상의 결과물을 만들어가겠습니다.  </li></ul><p id="232bd835-2e5b-80a1-95d4-daa7d9672f99" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
